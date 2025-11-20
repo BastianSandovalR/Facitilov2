@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Facilito"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Emergency Button Section -->
+            <TextView
+                android:id="@+id/tvEmergencyDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Presiona el botón en caso de emergencia"
+                android:textSize="16sp"
+                android:layout_marginBottom="12dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEmergency"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:text="SOS"
+                android:textSize="36sp"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="100dp"
+                app:backgroundTint="#FF0000"
+                android:layout_marginBottom="16dp" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switchTestMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Modo Prueba"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:id="@+id/tvTestModeInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Si está activado, no se enviará ninguna alerta real."
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:layout_marginBottom="32dp" />
+
+            <!-- Contacts Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mis Contactos"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddContact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Agregar Contacto"
+                app:icon="@android:drawable/ic_input_add"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Contactos de Emergencia"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvContacts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp" />
+
+            <!-- Home Location Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Volver a Casa"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Guarda la ubicación de tu domicilio para que podamos guiarte de regreso cuando lo necesites."
+                android:textSize="14sp"
+                android:layout_marginBottom="12dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSaveHomeLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Guardar Ubicación Actual"
+                app:icon="@android:drawable/ic_menu_mylocation"
+                android:layout_marginBottom="12dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGoHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="¡Llévame a Casa!"
+                app:icon="@android:drawable/ic_menu_directions"
+                app:backgroundTint="#4CAF50" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
